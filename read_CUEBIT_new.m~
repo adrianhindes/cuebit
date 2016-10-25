@@ -1,0 +1,17 @@
+fid = fopen('full_orbit.dat','r');
+
+if fid==-1
+  eqdsk=0;
+  crash=1;
+  return;
+end;
+
+
+header = fgets(fid); %read first line to remove header
+
+orbit.data = textscan(fid,'%f %f %f %f');
+orbit.t = orbit.data(1,i
+disp('done');
+
+fclose(fid);
+
