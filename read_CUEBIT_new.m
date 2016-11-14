@@ -9,24 +9,37 @@ end;
 
 header = fgets(fid); %read first line to remove header
 
-orbit.data = textscan(fid,'%f %f %f %f');
+orbit.data = textscan(fid,'%f %f %f %f %f %f');
 orbit.t = orbit.data{1,1};
-orbit.r = orbit.data{1,2};
-orbit.z = orbit.data{1,3};
-orbit.phi = orbit.data{1,4};
+orbit.x = orbit.data{1,2};
+orbit.y = orbit.data{1,3};
+orbit.r = orbit.data{1,4};
+orbit.z = orbit.data{1,5};
+orbit.phi = orbit.data{1,6};
 
 
 disp('done');
 
-range=20000;
+time2=length(orbit.t)/2
+
 
 figure
-plot(orbit.r(1:range),orbit.z(1:range))
+plot3(orbit.x(1:time2),orbit.y(1:time2),orbit.z(1:time2))
+daspect([1 1 1])
+grid on
 
-title('Orbit Trace')
-xlabel('Radius (m)')
-ylabel('Z (m)')
+title('Orbit 3D Trace')
+xlabel('x (m)')
+ylabel('y (m)')
+zlabel('z (m)')
 
+figure
 
+plot(orbit.x(1:time2),orbit.y(1:time2))
+grid on
+
+title('Orbit 2D Trace')
+xlabel('x (m)')
+ylabel('y (m)')
 fclose(fid);
 

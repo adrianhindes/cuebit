@@ -66,8 +66,8 @@ c
         psi0 = 0.9
         gamma = 0.8
 c
-c Input initial position & velocity of particle   
-c       
+c Input initial position & velocity of particle
+c 
         n = 1
 c
         allocate(x1(n),x2(n),y1(n),y2(n),z1(n),z2(n))
