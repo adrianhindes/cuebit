@@ -20,11 +20,12 @@ orbit.phi = orbit.data{1,6};
 
 disp('done');
 
-time2=length(orbit.t)/2
+time1=10000
+time2=10000
 
 
 figure
-plot3(orbit.x(1:time2),orbit.y(1:time2),orbit.z(1:time2))
+plot3(orbit.x(1:time1),orbit.y(1:time1),orbit.z(1:time1))
 daspect([1 1 1])
 grid on
 
